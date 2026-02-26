@@ -56,3 +56,24 @@
   <option>Gunungsitoli</option>
   <option>Nias</option>
 </select>
+<script>
+function kirimWA(){
+  let p = document.getElementById("pelabuhan").value;
+  let dw = document.getElementById("dewasa").value;
+  let an = document.getElementById("anak").value;
+  let t = document.getElementById("tgl").value;
+  let kl = document.getElementById("kelas").value;
+
+  let pesan =
+`Halo Admin,
+Saya mau reservasi tiket kapal PELNI:
+
+Pelabuhan: ${p}
+Dewasa: ${dw}
+Anak-anak: ${an}
+Tanggal: ${t}
+Kelas: ${kl}`;
+
+  window.open("https://wa.me/6285604773510?text="+encodeURIComponent(pesan));
+}
+</script>
