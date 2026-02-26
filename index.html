@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservasi Tiket Kapal PELNI</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#f2f6fb;
+  margin:0;
+  padding:0;
+}
+
+.container{
+  max-width:500px;
+  margin:40px auto;
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+h1{
+  text-align:center;
+  color:#003366;
+  margin-bottom:20px;
+}
+
+label{
+  font-weight:bold;
+  margin-top:10px;
+  display:block;
+}
+
+select, input{
+  width:100%;
+  padding:10px;
+  margin-top:5px;
+  margin-bottom:15px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:#005baa;
+  color:white;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Reservasi Tiket Kapal PELNI</h1>
+
+<label>Pelabuhan (Asal / Tujuan)</label>
+<select id="pelabuhan">
+  <option>Jakarta (Tanjung Priok)</option>
+  <option>Surabaya (Tanjung Perak)</option>
+  <option>Makassar</option>
+  <option>Batam (Batu Ampar)</option>
+  <option>Belawan (Medan)</option>
+  <option>Ambon</option>
+  <option>Sorong</option>
+  <option>Jayapura</option>
+  <option>Merauke</option>
+  <option>Kupang</option>
+</select>
+
+<label>Dewasa</label>
+<select id="dewasa">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+</select>
+
+<label>Anak-anak</label>
+<select id="anak">
+  <option>0</option>
+  <option>1</option>
+  <option>2</option>
+</select>
+
+<label>Tanggal Keberangkatan</label>
+<input type="date" id="tgl">
+
+<label>Kelas Kapal</label>
+<select id="kelas">
+  <option>Ekonomi</option>
+  <option>Ekonomi Seat</option>
+  <option>Kelas 1</option>
+  <option>Kelas 2</option>
+</select>
+
+<button onclick="kirimWA()">Cari Pelayaran</button>
+
+</div>
+
+<script>
+function kirimWA(){
+  let p = document.getElementById("pelabuhan").value;
+  let dw = document.getElementById("dewasa").value;
+  let an = document.getElementById("anak").value;
+  let t = document.getElementById("tgl").value;
+  let kl = document.getElementById("kelas").value;
+
+  let pesan =
+`Halo Admin,
+Saya mau reservasi tiket kapal PELNI:
+
+Pelabuhan: ${p}
+Dewasa: ${dw}
+Anak-anak: ${an}
+Tanggal: ${t}
+Kelas: ${kl}`;
+
+  window.open("https://wa.me/6285604773510?text="+encodeURIComponent(pesan));
+}
+</script>
+
+</body>
+</html>
