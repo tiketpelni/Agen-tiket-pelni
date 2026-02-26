@@ -220,13 +220,32 @@ button{
 
 </div>
 
-<script>
-function kirimWA(){
-  let p = document.getElementById("pelabuhan").value;
-  let dw = document.getElementById("dewasa").value;
-  let an = document.getElementById("anak").value;
-  let t = document.getElementById("tgl").value;
-  let kl = document.getElementById("kelas").value;
+  <script>
+function kirimWA() {
+  let asal = document.getElementById("asal").value;
+  let tujuan = document.getElementById("tujuan").value;
+  let dewasa = document.getElementById("dewasa").value;
+  let anak = document.getElementById("anak").value;
+  let tgl = document.getElementById("tgl").value;
+  let kelas = document.getElementById("kelas").value;
+
+  let pesan =
+`Halo Admin,
+Saya mau reservasi tiket kapal PELNI
+
+Asal: ${asal}
+Tujuan: ${tujuan}
+Dewasa: ${dewasa}
+Anak-anak: ${anak}
+Tanggal: ${tgl}
+Kelas: ${kelas}`;
+
+  window.open(
+    "https://wa.me/6285604773510?text=" + encodeURIComponent(pesan),
+    "_blank"
+  );
+}
+</script>
 
   let pesan =
 `Halo Admin,
